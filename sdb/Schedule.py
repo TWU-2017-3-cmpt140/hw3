@@ -32,6 +32,8 @@ class Schedule:
     # return: a string
     def __str__(self):
         out = ""
+        if len(self.events)==0:
+            return ""
         li = list(self.events)
         li.sort()
         for evt in li[:-1]:
