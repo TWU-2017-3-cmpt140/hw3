@@ -22,7 +22,7 @@ class Student:
         self.studentNumber = studentNumber
         self.firstName = firstName
         self.lastName = lastName
-        self.birthDate = birthDate
+        self.birthDate = datetime.datetime.strptime(birthDate,"%Y-%m-%d")
         self.courses = set() # let courses be a set
 
     #***************************************************************************
@@ -50,7 +50,7 @@ class Student:
     # returns an integer representing the age
     def getAge(self):
         now = datetime.datetime.now() # current date
-        return int((b-a).days/365)
+        return int((now-self.birthDate).days/365)
 
     #***************************************************************************
     # add the specified course
